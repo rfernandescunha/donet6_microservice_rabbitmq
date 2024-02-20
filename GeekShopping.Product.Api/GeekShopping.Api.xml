@@ -1,0 +1,109 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>SmartSchool.API</name>
+    </assembly>
+    <members>
+        <member name="T:SmartSchool.API.Controller.v1.AlunoController">
+            <summary>
+            Aluno Controller 
+            </summary>
+        </member>
+        <member name="M:SmartSchool.API.Controller.v1.AlunoController.#ctor(SmartSchool.API.Services.IAlunoService)">
+            <summary>
+            AlunoController
+            </summary>
+            <param name="service"></param>
+        </member>
+        <member name="M:SmartSchool.API.Controller.v1.AlunoController.GetById(System.Int32)">
+            <summary>
+            Metodo que retorna aluno por id
+            </summary>
+            <param name="AlunoId"></param>
+            <returns>Aluno</returns>
+        </member>
+        <member name="M:SmartSchool.API.Controller.v1.AlunoController.Get(SmartSchool.API.Helpers.PageParams)">
+            <summary>
+            Metodo que retona uma lista de alunos
+            </summary>
+            <returns>Lista de Alunos</returns>
+        </member>
+        <member name="M:SmartSchool.API.Controller.v1.AlunoController.Post(SmartSchool.API.Dto.Aluno.v1.AlunoPostDto)">
+            <summary>
+            Metodo que salva um aluno
+            </summary>
+            <param name="aluno"></param>
+            <returns>Aluno</returns>
+        </member>
+        <member name="M:SmartSchool.API.Controller.v1.AlunoController.Put(System.Int32,SmartSchool.API.Dto.Aluno.v1.AlunoPutDto)">
+            <summary>
+            Metodo que atualiza um aluno
+            </summary>
+            <param name="AlunoId"></param>
+            <param name="aluno"></param>
+            <returns>Aluno</returns>
+        </member>
+        <member name="M:SmartSchool.API.Controller.v1.AlunoController.Patch(System.Int32,SmartSchool.API.Dto.Aluno.v1.AlunoPutDto)">
+            <summary>
+            Metodo que atualiza um aluno
+            </summary>
+            <param name="AlunoId"></param>
+            <param name="aluno"></param>
+            <returns>Aluno</returns>
+        </member>
+        <member name="M:SmartSchool.API.Controller.v1.AlunoController.Delete(System.Int32)">
+            <summary>
+            Metodo que deleta um aluno
+            </summary>
+            <param name="AlunoId"></param>
+            <returns>boleano</returns>
+        </member>
+        <member name="M:SmartSchool.API.Controller.v1.AlunoController.GetAllAlunosByDisciplinas(System.Int32)">
+            <summary>
+            Metodo que retorna aluno por id
+            </summary>
+            <param name="AlunoId"></param>
+            <returns>Aluno</returns>
+        </member>
+        <member name="T:SmartSchool.API.Dto.Aluno.v1.AlunoPostDto">
+            <summary>
+            Dto para salvar aluno
+            </summary>
+        </member>
+        <member name="P:SmartSchool.API.Dto.Aluno.v1.AlunoPostDto.Nome">
+            <summary>
+            Nome do aluno
+            </summary>
+        </member>
+        <member name="P:SmartSchool.API.Dto.Aluno.v1.AlunoPostDto.Sobrenome">
+            <summary>
+            Sobrenome do aluno
+            </summary>
+        </member>
+        <member name="P:SmartSchool.API.Dto.Aluno.v1.AlunoPostDto.Telefone">
+            <summary>
+            Telefone do aluno
+            </summary>
+        </member>
+        <member name="P:SmartSchool.API.Dto.Aluno.v1.AlunoPostDto.Matricula">
+            <summary>
+            Matricula do aluno
+            </summary>
+        </member>
+        <member name="P:SmartSchool.API.Dto.Aluno.v1.AlunoPostDto.DtNascimento">
+            <summary>
+            Data de nascimento do aluno
+            </summary>
+        </member>
+        <member name="P:SmartSchool.API.Dto.Aluno.v1.AlunoPostDto.Ativo">
+            <summary>
+            Status do Aluno
+            </summary>
+        </member>
+        <member name="P:SmartSchool.API.Dto.Aluno.v1.AlunoPostDto.AlunoDisciplinas">
+            <summary>
+            Lista de disciplina do aluno
+            </summary>
+        </member>
+    </members>
+</doc>

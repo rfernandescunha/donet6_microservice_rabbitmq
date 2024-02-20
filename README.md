@@ -1,0 +1,1 @@
+# donet6_microservice_rabbitmq

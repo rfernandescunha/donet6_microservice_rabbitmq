@@ -1,9 +1,8 @@
 ﻿using AutoMapper;
 using GeekShopping.Cart.Api.Domain.Dto;
+using GeekShopping.Cart.Api.Domain.Dto.Messages;
 using GeekShopping.Cart.Api.Domain.Interfaces.IRepository;
 using GeekShopping.Cart.Api.Domain.Interfaces.IServices;
-using GeekShopping.Cart.Api.Domain.Messages;
-using GeekShopping.Cart.Api.RabbitMqSender;
 using GeekShopping.Cart.Api.Repository;
 
 namespace GeekShopping.Cart.Api.Domain.Services
@@ -13,9 +12,9 @@ namespace GeekShopping.Cart.Api.Domain.Services
         private readonly ICartRepository _cartRepository;
         private readonly IProductRepository _productRepository;
         private readonly IMapper _mapper;
-        private IRabbitMqSender _rabbitMqSender;
+        private readonly IRabbitMqSenderServices _rabbitMqSender;
 
-        public CartServices(ICartRepository cartRepository, IMapper mapper, IProductRepository productRepository, IRabbitMqSender rabbitMqSender)
+        public CartServices(ICartRepository cartRepository, IMapper mapper, IProductRepository productRepository, IRabbitMqSenderServices rabbitMqSender)
         {
             _cartRepository = cartRepository;
             _mapper = mapper;

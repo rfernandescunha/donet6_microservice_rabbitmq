@@ -1,6 +1,5 @@
 ﻿using GeekShopping.Cart.Api.Domain.Interfaces.IServices;
 using GeekShopping.Cart.Api.Domain.Services;
-using GeekShopping.Cart.Api.RabbitMqSender;
 
 namespace GeekShopping.Card.Api.Infra.Ioc
 {
@@ -10,7 +9,7 @@ namespace GeekShopping.Card.Api.Infra.Ioc
         {
             serviceCollection.AddScoped<ICartServices, CartServices>();
 
-            serviceCollection.AddScoped<IRabbitMqSender, RabbitMqSender>();
+            serviceCollection.AddSingleton<IRabbitMqSenderServices, RabbitMqSenderServices>();
 
         }
     }

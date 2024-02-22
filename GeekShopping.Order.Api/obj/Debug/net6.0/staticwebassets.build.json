@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "Hash": "dDf1I3An2znPC0TKqodzJYPK3VxTTqS/gSRvI7qAebs=",
+  "Source": "GeekShopping.Order.Api",
+  "BasePath": "_content/GeekShopping.Order.Api",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": []
+}

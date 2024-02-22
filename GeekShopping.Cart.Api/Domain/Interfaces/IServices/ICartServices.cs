@@ -1,5 +1,5 @@
 ﻿using GeekShopping.Cart.Api.Domain.Dto;
-using GeekShopping.Cart.Api.Domain.Messages;
+using GeekShopping.Cart.Api.Domain.Dto.Messages;
 
 namespace GeekShopping.Cart.Api.Domain.Interfaces.IServices
 {

@@ -1,6 +1,6 @@
 ﻿using GeekShopping.Cart.Api.Domain.Dto;
+using GeekShopping.Cart.Api.Domain.Dto.Messages;
 using GeekShopping.Cart.Api.Domain.Interfaces.IServices;
-using GeekShopping.Cart.Api.Domain.Messages;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 

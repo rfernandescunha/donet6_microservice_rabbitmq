@@ -1,5 +1,4 @@
 ﻿using GeekShopping.Card.Api.Infra.Data.Context;
-using GeekShopping.Cart.Api.Domain.Dto;
 using GeekShopping.Cart.Api.Domain.Entities;
 using GeekShopping.Cart.Api.Repository;
 using Microsoft.EntityFrameworkCore;

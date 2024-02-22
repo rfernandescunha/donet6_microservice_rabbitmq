@@ -1,0 +1,30 @@
+name: dockercompose5927548861717671871
+services:
+  rabbitMq:
+    container_name: some-rabbit
+    environment:
+      'RABBITMQ_DEFAULT_PASS ': ' passw123'
+      'RABBITMQ_DEFAULT_USER ': ' admin'
+    hostname: my-rabbit
+    image: rabbitmq:3-management
+    networks:
+      default: null
+    ports:
+      - mode: ingress
+        target: 15672
+        published: "15672"
+        protocol: tcp
+      - mode: ingress
+        target: 5672
+        published: "5672"
+        protocol: tcp
+    restart: always
+    volumes:
+      - type: bind
+        source: /docker_conf/rabbitmq/data/
+        target: /var/lib/rabbitmq
+        bind:
+          create_host_path: true
+networks:
+  default:
+    name: dockercompose5927548861717671871_default

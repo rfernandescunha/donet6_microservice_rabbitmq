@@ -1,7 +1,6 @@
 ﻿using GeekShopping.Cart.Api.Domain.Dto;
 using GeekShopping.Cart.Api.Domain.Interfaces.IServices;
-using GeekShopping.Cart.Api.Domain.Services;
-using Microsoft.AspNetCore.Authentication;
+using GeekShopping.Cart.Api.Domain.Messages;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
@@ -13,6 +12,7 @@ namespace GeekShopping.Cart.Api.Controllers.v1
     public class CartController : ControllerBase
     {
         private ICartServices _services;
+        
 
         public CartController(ICartServices services)
         {
@@ -23,7 +23,10 @@ namespace GeekShopping.Cart.Api.Controllers.v1
         public async Task<IActionResult> FindById(string id)
         {
             var cart = await _services.FindByUserId(id);
-            if (cart == null) return NotFound();
+
+            if (cart == null)
+                return BadRequest("cart not found.");
+
             return Ok(cart);
         }
 
@@ -31,7 +34,8 @@ namespace GeekShopping.Cart.Api.Controllers.v1
         [HttpPost("add-cart")]
         public async Task<IActionResult> Post([FromBody] CartDto dto)
         {
-            if (dto == null) return BadRequest("Dados do produto é obrigatorio.");
+            if (dto == null) 
+                return BadRequest("product is required.");
 
             var result = await _services.SaveOrUpdate(dto);
 
@@ -42,7 +46,10 @@ namespace GeekShopping.Cart.Api.Controllers.v1
         public async Task<IActionResult> UpdateCart([FromBody] CartDto vo)
         {
             var cart = await _services.Update(vo);
-            if (cart == null) return NotFound();
+
+            if (cart == null) 
+                return NotFound();
+
             return Ok(cart);
         }
 
@@ -50,7 +57,10 @@ namespace GeekShopping.Cart.Api.Controllers.v1
         public async Task<IActionResult> RemoveCart(int id)
         {
             var status = await _services.Remove(id);
-            if (!status) return BadRequest();
+
+            if (!status) 
+                return BadRequest();
+
             return Ok(status);
         }
 
@@ -60,7 +70,7 @@ namespace GeekShopping.Cart.Api.Controllers.v1
             var response = await _services.ApplyCoupon(dto.CartHeader.UserId, dto.CartHeader.CouponCode);
 
             if (!response)
-                return BadRequest();
+                return BadRequest("coupon not found.");
 
             return Ok(response);
         }
@@ -71,9 +81,21 @@ namespace GeekShopping.Cart.Api.Controllers.v1
             var response = await _services.RemoveCoupon(userId);
 
             if (!response)
-                return BadRequest();
+                return BadRequest("coupon not found.");
 
             return Ok(response);
+        }
+
+
+        [HttpPost("checkout")]
+        public async Task<IActionResult> Checkout([FromBody] CheckoutHeaderMsgDto dto)
+        {
+            var cart = await _services.CheckOut(dto);
+
+            if (cart == null)
+                return BadRequest("cart not found.");
+
+            return Ok(cart);
         }
     }
 }

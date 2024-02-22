@@ -1,4 +1,5 @@
 ﻿using GeekShopping.Cart.Api.Domain.Dto;
+using GeekShopping.Cart.Api.Domain.Messages;
 
 namespace GeekShopping.Cart.Api.Domain.Interfaces.IServices
 {
@@ -12,5 +13,7 @@ namespace GeekShopping.Cart.Api.Domain.Interfaces.IServices
         Task<bool> ApplyCoupon(string userId, string couponCode);
         Task<bool> RemoveCoupon(string userId);
         Task<bool> Clear(string userId);
+
+        Task<CartDto> CheckOut(CheckoutHeaderMsgDto dto);
     }
 }

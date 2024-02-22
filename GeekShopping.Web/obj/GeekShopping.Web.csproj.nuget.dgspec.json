@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\GitHub\\donet6_microservice_oauth2_openid_jwt\\GeekShopping.Web\\GeekShopping.Web.csproj": {}
+    "D:\\GitHub\\donet6_microservice_rabbitmq\\GeekShopping.Web\\GeekShopping.Web.csproj": {}
   },
   "projects": {
-    "D:\\GitHub\\donet6_microservice_oauth2_openid_jwt\\GeekShopping.Web\\GeekShopping.Web.csproj": {
+    "D:\\GitHub\\donet6_microservice_rabbitmq\\GeekShopping.Web\\GeekShopping.Web.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\GitHub\\donet6_microservice_oauth2_openid_jwt\\GeekShopping.Web\\GeekShopping.Web.csproj",
+        "projectUniqueName": "D:\\GitHub\\donet6_microservice_rabbitmq\\GeekShopping.Web\\GeekShopping.Web.csproj",
         "projectName": "GeekShopping.Web",
-        "projectPath": "D:\\GitHub\\donet6_microservice_oauth2_openid_jwt\\GeekShopping.Web\\GeekShopping.Web.csproj",
+        "projectPath": "D:\\GitHub\\donet6_microservice_rabbitmq\\GeekShopping.Web\\GeekShopping.Web.csproj",
         "packagesPath": "C:\\Users\\rafa_\\.nuget\\packages\\",
-        "outputPath": "D:\\GitHub\\donet6_microservice_oauth2_openid_jwt\\GeekShopping.Web\\obj\\",
+        "outputPath": "D:\\GitHub\\donet6_microservice_rabbitmq\\GeekShopping.Web\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

@@ -1,5 +1,6 @@
 ﻿using GeekShopping.Web.Models;
 using GeekShopping.Web.Models.Cart;
+using System.Collections.Generic;
 using System.Threading.Tasks;
 
 namespace GeekShopping.Web.Services.IServices
@@ -15,6 +16,6 @@ namespace GeekShopping.Web.Services.IServices
         Task<bool> RemoveCoupon(string userId, string token);
         Task<bool> ClearCart(string userId, string token);
 
-        Task<CartViewModel> Checkout(CartHeaderViewModel cartHeader, string token);
+        Task<CartHeaderViewModel> Checkout(CartHeaderViewModel cartHeader, string token);
      }
 }

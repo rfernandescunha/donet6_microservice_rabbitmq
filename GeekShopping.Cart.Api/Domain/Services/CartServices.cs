@@ -2,8 +2,9 @@
 using GeekShopping.Cart.Api.Domain.Dto;
 using GeekShopping.Cart.Api.Domain.Interfaces.IRepository;
 using GeekShopping.Cart.Api.Domain.Interfaces.IServices;
+using GeekShopping.Cart.Api.Domain.Messages;
+using GeekShopping.Cart.Api.RabbitMqSender;
 using GeekShopping.Cart.Api.Repository;
-using Microsoft.EntityFrameworkCore;
 
 namespace GeekShopping.Cart.Api.Domain.Services
 {
@@ -12,12 +13,14 @@ namespace GeekShopping.Cart.Api.Domain.Services
         private readonly ICartRepository _cartRepository;
         private readonly IProductRepository _productRepository;
         private readonly IMapper _mapper;
+        private IRabbitMqSender _rabbitMqSender;
 
-        public CartServices(ICartRepository cartRepository, IMapper mapper, IProductRepository productRepository)
+        public CartServices(ICartRepository cartRepository, IMapper mapper, IProductRepository productRepository, IRabbitMqSender rabbitMqSender)
         {
             _cartRepository = cartRepository;
             _mapper = mapper;
             _productRepository = productRepository;
+            _rabbitMqSender = rabbitMqSender;
         }
 
         public async Task<bool> ApplyCoupon(string userId, string couponCode)
@@ -108,6 +111,21 @@ namespace GeekShopping.Cart.Api.Domain.Services
 
 
             return _mapper.Map<CartDto>(ent);
+        }
+
+        public async Task<CartDto> CheckOut(CheckoutHeaderMsgDto dto)
+        {
+            var cart = await FindByUserId(dto.UserId);
+
+            if (cart == null)
+                return null;
+
+            dto.CartDetails = cart.CartDetails;
+            dto.DateTime = DateTime.UtcNow;
+
+            _rabbitMqSender.SendMessage(dto, "checkoutqueue");
+
+            return cart;
         }
     }
 }

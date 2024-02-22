@@ -11855,11 +11855,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\GitHub\\donet6_microservice_oauth2_openid_jwt\\GeekShopping.Coupon.Api\\GeekShopping.Coupon.Api.csproj",
+      "projectUniqueName": "D:\\GitHub\\donet6_microservice_rabbitmq\\GeekShopping.Coupon.Api\\GeekShopping.Coupon.Api.csproj",
       "projectName": "GeekShopping.Coupon.Api",
-      "projectPath": "D:\\GitHub\\donet6_microservice_oauth2_openid_jwt\\GeekShopping.Coupon.Api\\GeekShopping.Coupon.Api.csproj",
+      "projectPath": "D:\\GitHub\\donet6_microservice_rabbitmq\\GeekShopping.Coupon.Api\\GeekShopping.Coupon.Api.csproj",
       "packagesPath": "C:\\Users\\rafa_\\.nuget\\packages\\",
-      "outputPath": "D:\\GitHub\\donet6_microservice_oauth2_openid_jwt\\GeekShopping.Coupon.Api\\obj\\",
+      "outputPath": "D:\\GitHub\\donet6_microservice_rabbitmq\\GeekShopping.Coupon.Api\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

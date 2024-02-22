@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "z58wAQ23Ori21A71orv8JzKz3VBsK8u2qqune6mNj8tMCzke4IUwUzAPMFTc0OpZJsWmL+LqkHAH/V4zp4o2Ug==",
+  "dgSpecHash": "7yNH0qoTc2joetXDGCH8WWd68qzY1RLOWrJNWffhCeOkKqUycPmp5mMTQ+RYajOR1XyYDrrt+yBwnbJVGXwnDA==",
   "success": true,
-  "projectFilePath": "D:\\GitHub\\donet6_microservice_oauth2_openid_jwt\\GeekShopping.IdentityServer\\GeekShopping.IdentityServer.csproj",
+  "projectFilePath": "D:\\GitHub\\donet6_microservice_rabbitmq\\GeekShopping.IdentityServer\\GeekShopping.IdentityServer.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\rafa_\\.nuget\\packages\\duende.identityserver\\6.3.8\\duende.identityserver.6.3.8.nupkg.sha512",
     "C:\\Users\\rafa_\\.nuget\\packages\\duende.identityserver.aspnetidentity\\6.3.8\\duende.identityserver.aspnetidentity.6.3.8.nupkg.sha512",

@@ -13,7 +13,14 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GeekShopping.IdentityServer
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GeekShopping.Cart.Api", "GeekShopping.Cart.Api\GeekShopping.Cart.Api.csproj", "{321C9AA9-35DC-4A0B-8FEA-1F4D9623E337}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GeekShopping.Coupon.Api", "GeekShopping.Coupon.Api\GeekShopping.Coupon.Api.csproj", "{4EA772E9-A292-4244-A050-35AD4EE91A88}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GeekShopping.Coupon.Api", "GeekShopping.Coupon.Api\GeekShopping.Coupon.Api.csproj", "{4EA772E9-A292-4244-A050-35AD4EE91A88}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "pipe", "pipe", "{8C0534A2-DF67-473C-A07F-31C4520D9ECC}"
+	ProjectSection(SolutionItems) = preProject
+		docker-compose.yml = docker-compose.yml
+	EndProjectSection
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GeekShopping.MessageBus", "GeekShopping.MessageBus\GeekShopping.MessageBus.csproj", "{9E63707E-C835-4815-A362-45085E301243}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -41,6 +48,10 @@ Global
 		{4EA772E9-A292-4244-A050-35AD4EE91A88}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4EA772E9-A292-4244-A050-35AD4EE91A88}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4EA772E9-A292-4244-A050-35AD4EE91A88}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9E63707E-C835-4815-A362-45085E301243}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9E63707E-C835-4815-A362-45085E301243}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9E63707E-C835-4815-A362-45085E301243}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9E63707E-C835-4815-A362-45085E301243}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "4hMFNksfXWMXxvaEKtdgW6gGOQ+ZJAYrpqI/idJawrFC2N12/Ymv3G5Aj8HfmjBBn2vERRkUSdl5iLqkMtPl3A==",
+  "dgSpecHash": "2LiOOf3y3TwOoaRt9aLJ9iorPGFVeEHwnJ/a+a5YIdQxv1aGbkbmuQXLe5f6iY6Y9Asxj0t8fdNy//utpj8aNA==",
   "success": true,
-  "projectFilePath": "D:\\GitHub\\donet6_microservice_oauth2_openid_jwt\\GeekShopping.Web\\GeekShopping.Web.csproj",
+  "projectFilePath": "D:\\GitHub\\donet6_microservice_rabbitmq\\GeekShopping.Web\\GeekShopping.Web.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\rafa_\\.nuget\\packages\\microsoft.aspnetcore.authentication\\2.2.0\\microsoft.aspnetcore.authentication.2.2.0.nupkg.sha512",
     "C:\\Users\\rafa_\\.nuget\\packages\\microsoft.aspnetcore.authentication.abstractions\\2.2.0\\microsoft.aspnetcore.authentication.abstractions.2.2.0.nupkg.sha512",

@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "LQdg/j+1pMxu+qc57c1B9MWJIrc4S8jqnEEPcKhYG4sDwPNzyqqrqaYy3HCoBXw+GNg7p2xEhZDVyWc8J4CF9A==",
+  "dgSpecHash": "wshiqtSkAkLuZURKd3WCMsXIDAs6hwINDlXLA8oqJ/7bKJWs5e/SmLvT3FV9eobvy4muZzdq9Yihsqp+1AIgqg==",
   "success": true,
-  "projectFilePath": "D:\\GitHub\\donet6_microservice_oauth2_openid_jwt\\GeekShopping.Coupon.Api\\GeekShopping.Coupon.Api.csproj",
+  "projectFilePath": "D:\\GitHub\\donet6_microservice_rabbitmq\\GeekShopping.Coupon.Api\\GeekShopping.Coupon.Api.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\rafa_\\.nuget\\packages\\automapper\\13.0.1\\automapper.13.0.1.nupkg.sha512",
     "C:\\Users\\rafa_\\.nuget\\packages\\automapper.extensions.microsoft.dependencyinjection\\12.0.0\\automapper.extensions.microsoft.dependencyinjection.12.0.0.nupkg.sha512",

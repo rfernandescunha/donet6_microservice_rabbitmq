@@ -1,5 +1,5 @@
-﻿using GeekShopping.Order.Api.Domain.Interfaces.IServices;
-using GeekShopping.Cart.Api.Domain.Services;
+﻿using GeekShopping.Order.Api.Domain.Services;
+using Microsoft.Extensions.DependencyInjection;
 
 namespace GeekShopping.Order.Api.Infra.Ioc
 {
@@ -7,7 +7,7 @@ namespace GeekShopping.Order.Api.Infra.Ioc
     {
         public static void Register(IServiceCollection serviceCollection)
         {
-            serviceCollection.AddScoped<ICartServices, CartServices>();
+            serviceCollection.AddHostedService<RabbitMqConsumerServices>();
 
         }
     }

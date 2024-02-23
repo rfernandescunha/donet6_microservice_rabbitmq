@@ -1,4 +1,7 @@
 ﻿using GeekShopping.Order.Api.Infra.Ioc;
+using Microsoft.Extensions.Configuration;
+using Microsoft.Extensions.DependencyInjection;
+using System;
 
 namespace GeekShopping.Order.Api.Configs
 {
@@ -10,7 +13,6 @@ namespace GeekShopping.Order.Api.Configs
 
             InjectionRepository.Register(services, configuration);
             InjectionService.Register(services);
-            InjectionAutoMapper.Register(services);
         }
     }
 }

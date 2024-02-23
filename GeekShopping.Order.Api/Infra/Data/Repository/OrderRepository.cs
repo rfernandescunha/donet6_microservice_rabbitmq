@@ -2,6 +2,7 @@
 using GeekShopping.Order.Api.Domain.Interfaces.Repository;
 using GeekShopping.Order.Api.Infra.Data.Context;
 using Microsoft.EntityFrameworkCore;
+using System.Threading.Tasks;
 
 namespace GeekShopping.Order.Api.Infra.Data.Repository
 {

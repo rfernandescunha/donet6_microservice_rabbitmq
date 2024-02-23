@@ -1,4 +1,7 @@
-﻿namespace GeekShopping.Order.Api.Domain.Dto.Messages
+﻿using System;
+using System.Collections.Generic;
+
+namespace GeekShopping.Order.Api.Domain.Dto.Messages
 {
     public class CheckoutHeaderMsgDto
     {

@@ -1,24 +1,28 @@
 ﻿using GeekShopping.Order.Api.Configs.Settings;
 using GeekShopping.Order.Api.Domain.Dto.Messages;
 using GeekShopping.Order.Api.Domain.Entities;
-using GeekShopping.Order.Api.Domain.Interfaces.Repository;
-using GeekShopping.Order.Api.Infra.Data.Repository;
 using Microsoft.Extensions.Options;
+using Microsoft.Extensions.Hosting;
 using RabbitMQ.Client;
 using RabbitMQ.Client.Events;
 using System.Text;
 using System.Text.Json;
+using System.Threading;
+using System.Threading.Tasks;
+using System.Collections.Generic;
+using System;
+using GeekShopping.Order.Api.Infra.Data.Repository;
 
 namespace GeekShopping.Order.Api.Domain.Services
 {
     public class RabbitMqConsumerServices : BackgroundService
     {
         private readonly IOptions<AppSettingsRabbitMq> _serviceSettings;
-        private readonly IOrderRepository _repository;
+        private readonly OrderRepository _repository;
         private readonly IConnection _connection;
         private readonly IModel _channel;
 
-        public RabbitMqConsumerServices(IOrderRepository repository, IOptions<AppSettingsRabbitMq> serviceSettings)
+        public RabbitMqConsumerServices(OrderRepository repository, IOptions<AppSettingsRabbitMq> serviceSettings)
         {
             _serviceSettings = serviceSettings;
             _repository = repository;

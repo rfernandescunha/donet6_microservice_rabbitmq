@@ -1,6 +1,7 @@
-﻿using GeekShopping.Cart.Api.Domain.Dto;
+﻿using GeekShopping.Cart.Api.Domain.Dto.Cart;
 using GeekShopping.Cart.Api.Domain.Dto.Messages;
 using GeekShopping.Cart.Api.Domain.Interfaces.IServices;
+using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
@@ -42,6 +43,7 @@ namespace GeekShopping.Cart.Api.Controllers.v1
             return Ok(result);
         }
 
+        [Authorize]
         [HttpPut("update-cart")]
         public async Task<IActionResult> UpdateCart([FromBody] CartDto vo)
         {
@@ -53,6 +55,7 @@ namespace GeekShopping.Cart.Api.Controllers.v1
             return Ok(cart);
         }
 
+        [Authorize]
         [HttpDelete("remove-cart/{id}")]
         public async Task<IActionResult> RemoveCart(int id)
         {
@@ -64,6 +67,7 @@ namespace GeekShopping.Cart.Api.Controllers.v1
             return Ok(status);
         }
 
+        [Authorize]
         [HttpPost("apply-coupon")]
         public async Task<IActionResult> ApplyCoupon([FromBody]CartDto dto)
         {
@@ -75,6 +79,7 @@ namespace GeekShopping.Cart.Api.Controllers.v1
             return Ok(response);
         }
 
+        [Authorize]
         [HttpDelete("remove-coupon/{userId}")]
         public async Task<IActionResult> RemoveCoupon(string userId)
         {
@@ -87,10 +92,13 @@ namespace GeekShopping.Cart.Api.Controllers.v1
         }
 
 
+        [Authorize]
         [HttpPost("checkout")]
         public async Task<IActionResult> Checkout([FromBody] CheckoutHeaderMsgDto dto)
         {
-            var cart = await _services.CheckOut(dto);
+            var token = await HttpContext.GetTokenAsync("access_token");
+
+            var cart = await _services.CheckOut(dto, token);
 
             if (cart == null)
                 return BadRequest("cart not found.");

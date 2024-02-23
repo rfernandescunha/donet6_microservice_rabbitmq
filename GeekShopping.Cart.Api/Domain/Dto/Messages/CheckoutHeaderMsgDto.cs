@@ -1,4 +1,4 @@
-﻿using GeekShopping.MessageBus;
+﻿using GeekShopping.Cart.Api.Domain.Dto.Cart;
 
 namespace GeekShopping.Cart.Api.Domain.Dto.Messages
 {

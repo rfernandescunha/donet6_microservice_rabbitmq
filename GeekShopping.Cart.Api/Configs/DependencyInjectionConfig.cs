@@ -10,6 +10,7 @@ namespace GeekShopping.Card.Api.Configs
             if (services == null) throw new ArgumentNullException(nameof(services));
 
             InjectionRepository.Register(services, configuration);
+            InjectionApiClientService.Register(services);
             InjectionService.Register(services);
             InjectionAutoMapper.Register(services);
         }

@@ -1,7 +1,6 @@
 ﻿using GeekShopping.Card.Api.Infra.Data.Context;
 using GeekShopping.Cart.Api.Domain.Interfaces.IRepository;
 using GeekShopping.Cart.Api.Infra.Data.Repository;
-using GeekShopping.Cart.Api.Repository;
 using Microsoft.EntityFrameworkCore;
 
 namespace GeekShopping.Cart.Api.Infra.Ioc

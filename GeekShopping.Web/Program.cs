@@ -1,4 +1,6 @@
-using GeekShopping.Web.Clients;
+using GeekShopping.Web.Configs;
+using GeekShopping.Web.Configs.Settings;
+using GeekShopping.Web.Infra.Ioc;
 using Microsoft.AspNetCore.Authentication;
 
 IConfiguration configuration;
@@ -8,9 +10,11 @@ var builder = WebApplication.CreateBuilder(args);
 configuration = builder.Configuration;
 
 
-//builder.Services.Configure<Microsoft.AspNetCore.Http.Json.JsonOptions>(x => x.SerializerOptions.IncludeFields = true);
+builder.Services.AddOptions();
 
-//builder.Services.Configure<UrlConfigs>(configuration.GetSection("urlApis"));
+builder.Services.Configure<Microsoft.AspNetCore.Http.Json.JsonOptions>(x => x.SerializerOptions.IncludeFields = true);
+
+builder.Services.Configure<AppSettingsServicesUrl>(configuration.GetSection("ServicesUrl"));
 
 
 builder.Services.AddApiClientServiceConfig(configuration);
@@ -20,27 +24,7 @@ builder.Services.AddApiClientServiceConfig(configuration);
 builder.Services.AddControllersWithViews();
 
 
-builder.Services.AddAuthentication(opt =>
-{
-    opt.DefaultScheme = "Cookies";
-    opt.DefaultChallengeScheme = "oidc";
-
-}).AddCookie("Cookies", c=> c.ExpireTimeSpan = TimeSpan.FromMinutes(10))
-  .AddOpenIdConnect("oidc", opt=>
-    {
-        opt.Authority = configuration.GetSection("ServicesUrl").GetSection("IdentityServer").Value;
-        opt.GetClaimsFromUserInfoEndpoint = true;
-        opt.ClientId = "geek_shopping";
-        opt.ClientSecret = "my_secret_here"; //Enviar para AppSettings
-        opt.ResponseType = "code";
-        opt.ClaimActions.MapJsonKey("role", "role", "role");
-        opt.ClaimActions.MapJsonKey("sub", "sub", "sub");
-        opt.TokenValidationParameters.NameClaimType = "name";
-        opt.TokenValidationParameters.RoleClaimType = "role";
-        opt.Scope.Add("geek_shopping");
-        opt.SaveTokens = true;
-
-    });
+builder.Services.AddAuthenticationConfig(configuration);
 
 
 

@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "xFfcr4PA+W4xJYPyM+kOIyAjhAnoqPzw/A/AArwKuUlYk4QdOuLcQWoENGQi2xxLPVkkTuCzegzUOkYEkbRi/w==",
+  "dgSpecHash": "1mWwBi0Vcp60QILC4EzSaoDS9pfOC9+I//Je5lb5fFNhLGvvFDY4qZZXE0BhEcDOOVe5YQ3Ts4xb0MnI6+rtWQ==",
   "success": true,
   "projectFilePath": "D:\\GitHub\\donet6_microservice_rabbitmq\\GeekShopping.Cart.Api\\GeekShopping.Cart.Api.csproj",
   "expectedPackageFiles": [

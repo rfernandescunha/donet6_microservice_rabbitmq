@@ -1,4 +1,6 @@
-﻿namespace GeekShopping.Cart.Api.Domain.Dto
+﻿using GeekShopping.Cart.Api.Domain.Dto.Product;
+
+namespace GeekShopping.Cart.Api.Domain.Dto.Cart
 {
     public class CartDetailDto
     {

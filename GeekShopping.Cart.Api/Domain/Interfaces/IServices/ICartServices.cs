@@ -1,4 +1,4 @@
-﻿using GeekShopping.Cart.Api.Domain.Dto;
+﻿using GeekShopping.Cart.Api.Domain.Dto.Cart;
 using GeekShopping.Cart.Api.Domain.Dto.Messages;
 
 namespace GeekShopping.Cart.Api.Domain.Interfaces.IServices
@@ -14,6 +14,6 @@ namespace GeekShopping.Cart.Api.Domain.Interfaces.IServices
         Task<bool> RemoveCoupon(string userId);
         Task<bool> Clear(string userId);
 
-        Task<CartDto> CheckOut(CheckoutHeaderMsgDto dto);
+        Task<CartDto> CheckOut(CheckoutHeaderMsgDto dto, string token);
     }
 }

@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace GeekShopping.Cart.Api.Domain.Dto
+namespace GeekShopping.Cart.Api.Domain.Dto.Cart
 {
     public class CartDto
     {

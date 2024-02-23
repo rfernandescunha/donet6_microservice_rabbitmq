@@ -1,5 +1,6 @@
 ﻿using AutoMapper;
-using GeekShopping.Cart.Api.Domain.Dto;
+using GeekShopping.Cart.Api.Domain.Dto.Cart;
+using GeekShopping.Cart.Api.Domain.Dto.Product;
 using GeekShopping.Cart.Api.Domain.Entities;
 
 namespace GeekShopping.Cart.Api.Infra.CrossCutting.AutoMapper

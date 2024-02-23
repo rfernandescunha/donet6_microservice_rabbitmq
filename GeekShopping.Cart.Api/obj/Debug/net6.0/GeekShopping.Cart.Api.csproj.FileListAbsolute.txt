@@ -578,5 +578,3 @@ D:\GitHub\donet6_microservice_rabbitmq\GeekShopping.Cart.Api\obj\Debug\net6.0\Ge
 D:\GitHub\donet6_microservice_rabbitmq\GeekShopping.Cart.Api\obj\Debug\net6.0\ref\GeekShopping.Cart.Api.dll
 D:\GitHub\donet6_microservice_rabbitmq\GeekShopping.Cart.Api\bin\Debug\net6.0\RabbitMQ.Client.dll
 D:\GitHub\donet6_microservice_rabbitmq\GeekShopping.Cart.Api\bin\Debug\net6.0\System.Threading.Channels.dll
-D:\GitHub\donet6_microservice_rabbitmq\GeekShopping.Cart.Api\bin\Debug\net6.0\GeekShopping.MessageBus.dll
-D:\GitHub\donet6_microservice_rabbitmq\GeekShopping.Cart.Api\bin\Debug\net6.0\GeekShopping.MessageBus.pdb

@@ -1,9 +1,8 @@
 ﻿using AutoMapper;
-using GeekShopping.Cart.Api.Domain.Dto;
+using GeekShopping.Cart.Api.Domain.Dto.Cart;
 using GeekShopping.Cart.Api.Domain.Dto.Messages;
 using GeekShopping.Cart.Api.Domain.Interfaces.IRepository;
 using GeekShopping.Cart.Api.Domain.Interfaces.IServices;
-using GeekShopping.Cart.Api.Repository;
 
 namespace GeekShopping.Cart.Api.Domain.Services
 {
@@ -13,13 +12,15 @@ namespace GeekShopping.Cart.Api.Domain.Services
         private readonly IProductRepository _productRepository;
         private readonly IMapper _mapper;
         private readonly IRabbitMqSenderServices _rabbitMqSender;
+        private readonly ICouponApiClientServices _couponApiClientServices;
 
-        public CartServices(ICartRepository cartRepository, IMapper mapper, IProductRepository productRepository, IRabbitMqSenderServices rabbitMqSender)
+        public CartServices(ICartRepository cartRepository, IMapper mapper, IProductRepository productRepository, IRabbitMqSenderServices rabbitMqSender, ICouponApiClientServices couponApiClientServices)
         {
             _cartRepository = cartRepository;
             _mapper = mapper;
             _productRepository = productRepository;
             _rabbitMqSender = rabbitMqSender;
+            _couponApiClientServices = couponApiClientServices;
         }
 
         public async Task<bool> ApplyCoupon(string userId, string couponCode)
@@ -111,13 +112,21 @@ namespace GeekShopping.Cart.Api.Domain.Services
 
             return _mapper.Map<CartDto>(ent);
         }
-
-        public async Task<CartDto> CheckOut(CheckoutHeaderMsgDto dto)
+        public async Task<CartDto> CheckOut(CheckoutHeaderMsgDto dto, string token)
         {
+
             var cart = await FindByUserId(dto.UserId);
 
             if (cart == null)
                 return null;
+
+            if(!string.IsNullOrEmpty(dto.CouponCode))
+            {
+                var coupon = await _couponApiClientServices.GetCouponByCode(dto.CouponCode, token);
+
+                if (dto.DiscountAmount != coupon.DiscountAmount)
+                    throw new Exception("coupon invalido");
+            }
 
             dto.CartDetails = cart.CartDetails;
             dto.DateTime = DateTime.UtcNow;

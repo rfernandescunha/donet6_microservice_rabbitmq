@@ -1,7 +1,7 @@
 ﻿
 using System.ComponentModel.DataAnnotations.Schema;
 
-namespace GeekShopping.Cart.Api.Domain.Dto
+namespace GeekShopping.Cart.Api.Domain.Dto.Cart
 {
     public class CartHeaderDto
     {

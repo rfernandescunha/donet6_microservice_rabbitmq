@@ -20,9 +20,12 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "pipe", "pipe", "{8C0534A2-D
 		docker-compose.yml = docker-compose.yml
 	EndProjectSection
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GeekShopping.MessageBus", "GeekShopping.MessageBus\GeekShopping.MessageBus.csproj", "{9E63707E-C835-4815-A362-45085E301243}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GeekShopping.Order.Api", "GeekShopping.Order.Api\GeekShopping.Order.Api.csproj", "{E00D4E1D-ADAB-48CD-8343-12D3492948C7}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GeekShopping.Order.Api", "GeekShopping.Order.Api\GeekShopping.Order.Api.csproj", "{E00D4E1D-ADAB-48CD-8343-12D3492948C7}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{FA6B6E85-6BCC-41A1-8BF0-CD20A7B348B7}"
+	ProjectSection(SolutionItems) = preProject
+		.editorconfig = .editorconfig
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -50,10 +53,6 @@ Global
 		{4EA772E9-A292-4244-A050-35AD4EE91A88}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4EA772E9-A292-4244-A050-35AD4EE91A88}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4EA772E9-A292-4244-A050-35AD4EE91A88}.Release|Any CPU.Build.0 = Release|Any CPU
-		{9E63707E-C835-4815-A362-45085E301243}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{9E63707E-C835-4815-A362-45085E301243}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{9E63707E-C835-4815-A362-45085E301243}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{9E63707E-C835-4815-A362-45085E301243}.Release|Any CPU.Build.0 = Release|Any CPU
 		{E00D4E1D-ADAB-48CD-8343-12D3492948C7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{E00D4E1D-ADAB-48CD-8343-12D3492948C7}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E00D4E1D-ADAB-48CD-8343-12D3492948C7}.Release|Any CPU.ActiveCfg = Release|Any CPU

@@ -3,6 +3,7 @@ using GeekShopping.Cart.Api.Domain.Dto.Cart;
 using GeekShopping.Cart.Api.Domain.Dto.Messages;
 using GeekShopping.Cart.Api.Domain.Interfaces.IRepository;
 using GeekShopping.Cart.Api.Domain.Interfaces.IServices;
+using GeekShopping.Cart.Api.Domain.Interfaces.IServices.Messages;
 
 namespace GeekShopping.Cart.Api.Domain.Services
 {
@@ -11,10 +12,10 @@ namespace GeekShopping.Cart.Api.Domain.Services
         private readonly ICartRepository _cartRepository;
         private readonly IProductRepository _productRepository;
         private readonly IMapper _mapper;
-        private readonly IRabbitMqSenderServices _rabbitMqSender;
+        private readonly ICheckoutHeaderSendMsgServices _rabbitMqSender;
         private readonly ICouponApiClientServices _couponApiClientServices;
 
-        public CartServices(ICartRepository cartRepository, IMapper mapper, IProductRepository productRepository, IRabbitMqSenderServices rabbitMqSender, ICouponApiClientServices couponApiClientServices)
+        public CartServices(ICartRepository cartRepository, IMapper mapper, IProductRepository productRepository, ICheckoutHeaderSendMsgServices rabbitMqSender, ICouponApiClientServices couponApiClientServices)
         {
             _cartRepository = cartRepository;
             _mapper = mapper;

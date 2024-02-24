@@ -1,4 +1,6 @@
 ﻿using AutoMapper;
+using GeekShopping.Order.Api.Domain.Dto;
+using GeekShopping.Order.Api.Domain.Entities;
 
 namespace GeekShopping.Order.Api.Infra.CrossCutting.AutoMapper
 {
@@ -7,11 +9,7 @@ namespace GeekShopping.Order.Api.Infra.CrossCutting.AutoMapper
         public EntityToDtoProfile()
         {
 
-            //CreateMap<ProductDto, Product>().ReverseMap();
-            //CreateMap<CartDetailDto, CartDetail>().ReverseMap();
-            //CreateMap<CartHeaderDto, CartHeader>().ReverseMap();
-            //CreateMap<CartDto, Domain.Entities.Cart> ().ReverseMap();
-
+            CreateMap<OrderHeaderDto, OrderHeader>().ReverseMap();
 
         }
     }

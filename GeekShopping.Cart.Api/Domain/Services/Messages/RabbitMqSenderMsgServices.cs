@@ -4,11 +4,11 @@ using RabbitMQ.Client;
 using System.Text.Json;
 using System.Text;
 using GeekShopping.Cart.Api.Domain.Dto.Messages;
-using GeekShopping.Cart.Api.Domain.Interfaces.IServices;
+using GeekShopping.Cart.Api.Domain.Interfaces.IServices.Messages;
 
-namespace GeekShopping.Cart.Api.Domain.Services
+namespace GeekShopping.Cart.Api.Domain.Services.Messages
 {
-    public class RabbitMqSenderServices : IRabbitMqSenderServices
+    public class RabbitMqSenderMsgServices<T> : IRabbitMqSenderMsgServices<T> where T : class
     {
         private readonly IOptions<AppSettingsRabbitMq> _serviceSettings;
 
@@ -17,7 +17,7 @@ namespace GeekShopping.Cart.Api.Domain.Services
         private readonly string _userName;
         private IConnection _connection;
 
-        public RabbitMqSenderServices(IOptions<AppSettingsRabbitMq> serviceSettings)
+        public RabbitMqSenderMsgServices(IOptions<AppSettingsRabbitMq> serviceSettings)
         {
             _serviceSettings = serviceSettings;
 
@@ -27,16 +27,9 @@ namespace GeekShopping.Cart.Api.Domain.Services
             //_connection = connection;
         }
 
-        public void SendMessage(CheckoutHeaderMsgDto message, string queueName)
+        public void SendMessage(T message, string queueName)
         {
-            var factory = new ConnectionFactory
-            {
-                HostName = _hostName,
-                Password = _password,
-                UserName = _userName,
-            };
-
-            _connection = factory.CreateConnection();
+            CreateConnection();
 
             using (var channel = _connection.CreateModel())
             {
@@ -52,12 +45,34 @@ namespace GeekShopping.Cart.Api.Domain.Services
             }
         }
 
-        private byte[] GetMessageAsByteArray(CheckoutHeaderMsgDto message)
+        private byte[] GetMessageAsByteArray(T message)
         {
             var options = new JsonSerializerOptions { WriteIndented = true };
             var json = JsonSerializer.Serialize(message, options);
             var body = Encoding.UTF8.GetBytes(json);
             return body;
+        }
+
+        private void CreateConnection()
+        {
+            try
+            {
+                if (_connection == null)
+                {
+                    var factory = new ConnectionFactory
+                    {
+                        HostName = _hostName,
+                        Password = _password,
+                        UserName = _userName,
+                    };
+
+                    _connection = factory.CreateConnection();
+                }
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
         }
     }
 }

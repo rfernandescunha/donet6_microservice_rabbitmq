@@ -9,6 +9,8 @@ namespace GeekShopping.Order.Api.Infra.CrossCutting.AutoMapper
         public DtoToEntityProfile()
         {
             CreateMap<OrderHeader, OrderHeaderDto>().ReverseMap();
+            CreateMap<OrderDetail, OrderDetailDto>().ReverseMap();
+            
 
         }
     }

@@ -1,24 +1,22 @@
 ﻿using AutoMapper;
 using GeekShopping.Order.Api.Domain.Dto;
-using GeekShopping.Order.Api.Domain.Dto.Messages;
 using GeekShopping.Order.Api.Domain.Entities;
 using GeekShopping.Order.Api.Domain.Interfaces.IServices;
-using GeekShopping.Order.Api.Domain.Interfaces.IServices.Messages;
-using GeekShopping.Order.Api.Domain.Interfaces.Repository;
+using GeekShopping.Order.Api.Domain.Interfaces.IServices.Messages.Send;
+using GeekShopping.Order.Api.Infra.Data.Repository;
 using GeekShopping.OrderAPI.Messages;
 using System;
-using System.Collections.Generic;
 using System.Threading.Tasks;
 
 namespace GeekShopping.Order.Api.Domain.Services
 {
     public class OrderServices : IOrderServices
     {
-        private readonly IOrderRepository _orderRepository;
+        private readonly OrderRepository _orderRepository;
         private readonly IMapper _mapper;
         private readonly IPaymentSendMsgServices _paymentSendMsgServices;
 
-        public OrderServices(IOrderRepository orderRepository, IMapper mapper, IPaymentSendMsgServices paymentSendMsgServices)
+        public OrderServices(OrderRepository orderRepository, IMapper mapper, IPaymentSendMsgServices paymentSendMsgServices)
         {
             _orderRepository = orderRepository;
             _mapper = mapper;

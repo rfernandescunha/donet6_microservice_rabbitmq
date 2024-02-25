@@ -24,7 +24,6 @@ namespace GeekShopping.Cart.Api.Domain.Services.Messages
             _hostName = _serviceSettings.Value._hostName;
             _password = _serviceSettings.Value._password;
             _userName = _serviceSettings.Value._userName;
-            //_connection = connection;
         }
 
         public void SendMessage(T message, string queueName)

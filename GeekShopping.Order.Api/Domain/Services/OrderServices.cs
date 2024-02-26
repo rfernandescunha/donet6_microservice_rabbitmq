@@ -1,10 +1,10 @@
 ﻿using AutoMapper;
 using GeekShopping.Order.Api.Domain.Dto;
+using GeekShopping.Order.Api.Domain.Dto.Messages;
 using GeekShopping.Order.Api.Domain.Entities;
 using GeekShopping.Order.Api.Domain.Interfaces.IServices;
 using GeekShopping.Order.Api.Domain.Interfaces.IServices.Messages.Send;
 using GeekShopping.Order.Api.Infra.Data.Repository;
-using GeekShopping.OrderAPI.Messages;
 using System;
 using System.Threading.Tasks;
 
@@ -42,9 +42,18 @@ namespace GeekShopping.Order.Api.Domain.Services
             }
         }
 
-        public Task UpdatePaymentStatus(long orderHeaderId, bool paid)
+        public async Task<bool> PaymentStatusUpdate(long orderHeaderId, bool paid)
         {
-            throw new System.NotImplementedException();
+            try
+            {
+
+               return await _orderRepository.PaymentStatusUpdate(orderHeaderId, paid);
+
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
         }
 
         private PaymentMsgDto PaymentMsgDto(OrderHeaderDto dto)

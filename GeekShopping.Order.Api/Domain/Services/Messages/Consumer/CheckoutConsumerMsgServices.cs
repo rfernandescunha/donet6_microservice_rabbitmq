@@ -59,7 +59,6 @@ namespace GeekShopping.Order.Api.Domain.Services.Messages.Consumer
 
                 var vo = JsonSerializer.Deserialize<CheckoutHeaderMsgDto>(content);
 
-
                 _orderServices.Save(ProcessMsg(vo));
 
                 _channel.BasicAck(evt.DeliveryTag, false);

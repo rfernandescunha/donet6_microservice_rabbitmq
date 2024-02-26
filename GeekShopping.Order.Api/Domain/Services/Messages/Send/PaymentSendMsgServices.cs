@@ -1,6 +1,6 @@
 ﻿using GeekShopping.Order.Api.Configs.Settings;
+using GeekShopping.Order.Api.Domain.Dto.Messages;
 using GeekShopping.Order.Api.Domain.Interfaces.IServices.Messages.Send;
-using GeekShopping.OrderAPI.Messages;
 using Microsoft.Extensions.Options;
 
 namespace GeekShopping.Order.Api.Domain.Services.Messages.Send

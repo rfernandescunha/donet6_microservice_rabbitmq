@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "Hash": "uZdyMB77fH90XPqDl0k2ckUS6FRmHMbF0qHeHztsiv0=",
+  "Source": "GeekShopping.Payment.Api",
+  "BasePath": "_content/GeekShopping.Payment.Api",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": []
+}

@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace GeekShopping.OrderAPI.Messages
+namespace GeekShopping.Order.Api.Domain.Dto.Messages
 {
     public class PaymentMsgDto
     {

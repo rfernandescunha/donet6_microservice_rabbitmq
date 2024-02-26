@@ -28,7 +28,7 @@ namespace GeekShopping.Order.Api.Infra.Data.Repository
             return true;
         }
 
-        public async Task UpdatePaymentStatus(long orderHeaderId, bool status)
+        public async Task<bool> PaymentStatusUpdate(long orderHeaderId, bool status)
         {
             await using var _db = new MySqlContext(_context);
             
@@ -39,6 +39,8 @@ namespace GeekShopping.Order.Api.Infra.Data.Repository
                 header.PaymentStatus = status;
                 await _db.SaveChangesAsync();
             };
+
+            return true;
         }
     }
 }

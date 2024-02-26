@@ -1,7 +1,6 @@
 //a variable to hold configuration
 using GeekShopping.Order.Api.Configs;
 using GeekShopping.Order.Api.Configs.Settings;
-using GeekShopping.Order.Api.Domain.Services;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;

@@ -27,7 +27,6 @@
 
 	<ItemGroup>
 	  <Folder Include="Controllers\" />
-	  <Folder Include="Infra\Data\Migrations\" />
 	</ItemGroup>
 
 </Project>

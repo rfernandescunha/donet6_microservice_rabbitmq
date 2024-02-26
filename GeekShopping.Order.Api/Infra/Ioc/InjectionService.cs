@@ -17,7 +17,7 @@ namespace GeekShopping.Order.Api.Infra.Ioc
             serviceCollection.AddSingleton<IPaymentSendMsgServices, PaymentSendMsgServices>();
 
             serviceCollection.AddHostedService<CheckoutConsumerMsgServices>();
-
+            serviceCollection.AddHostedService<PaymentConsumerMsgServices>();
         }
     }
 }

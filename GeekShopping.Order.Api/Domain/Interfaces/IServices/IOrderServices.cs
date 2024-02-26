@@ -7,6 +7,6 @@ namespace GeekShopping.Order.Api.Domain.Interfaces.IServices
     public interface IOrderServices
     {
         Task<bool> Save(OrderHeaderDto header);
-        Task UpdatePaymentStatus(long orderHeaderId, bool paid);
+        Task<bool> PaymentStatusUpdate(long orderHeaderId, bool paid);
     }
 }

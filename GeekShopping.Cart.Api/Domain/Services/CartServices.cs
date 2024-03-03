@@ -134,6 +134,8 @@ namespace GeekShopping.Cart.Api.Domain.Services
 
             _rabbitMqSender.SendMessage(dto, "checkoutqueue");
 
+            await Clear(dto.UserId);
+
             return cart;
         }
     }
